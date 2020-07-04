@@ -44,6 +44,7 @@ import * as trumpSVG from './resources/illustration/trump3.svg';
 let video;
 let videoWidth = 300;
 let videoHeight = 300;
+let mobileWidth = 800;
 
 // Canvas
 let faceDetection = null;
@@ -341,8 +342,7 @@ function detectPoseInRealTime(video) {
 }
 
 function setupCanvas() {
-  mobile = isMobile();
-  if (mobile) {
+  if (window.innerWidth < mobileWidth) {
     canvasWidth = Math.min(window.innerWidth, window.innerHeight);
     canvasHeight = canvasWidth;
     videoWidth *= 0.7;
