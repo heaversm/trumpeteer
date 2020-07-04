@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Happy 4th!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Bungee+Inline&family=BioRhyme:wght@300;800&family=Bungee&family=Bungee+Shade&family=Rubik:wght@300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="camera.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+      <div id="info" style="display: none;"></div>
+      <div class="canvas-container">
+        <canvas class="illustration-canvas"></canvas>
+        <div class="quote-container"></div>
+        <div class="title-container">
+          <div class="title-content">
+            <h1 class="title">Trumpeteer</h1>
+            <div id="loading">
+              <span class="spinner-text" id="status">
+                Loading PoseNet model...
+              </span>
+              <div class="sk-spinner sk-spinner-pulse"></div>
+            </div>
+            <div class="instructions">
+              <p>
+                Click to experience the presidential simulator.
+              </p>
+              <button class="begin">BEGIN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main" style="display: none;">
+        <video id="video" playsinline></video>
+        <canvas id="output" class="camera-canvas"></canvas>
+        <canvas id="keypoints" class="camera-canvas"></canvas>
+      </div>
+      <audio class="audio" src="music/america_first.mp3" autoplay></audio>
+      <div class="credits-toggle">
+        ⓘ
+      </div>
+      <div class="credits-container">
+        <div class="credits">
+          <p><span>Music:</span> <a href="http://gba.wavethemes.net/music-pmd.html" target='_blank' rel='noopener'>America First</a></p>
+          <p><span>Presidential Quotes</span>: <a href="https://www.mcsweeneys.net/articles/the-complete-listing-so-far-atrocities-1-759" target='_blank' rel='noopener'>McSweeney's</a></p>
+          <p><span>Pose Detection</span>: <a href="https://github.com/yemount/pose-animator" target='_blank' rel='noopener'>Google / Tensorflow</a></p>
+          <p></p>
+          <div class="credits-close">&times;</div>
+        </div>
+      </div>
+      <script src="camera.js"></script>
+  </body>
+</html>

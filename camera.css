@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #20376B;
+    text-decoration: none;
+}
+
+.credits span {
+    font-weight: 800;
+}
+
+.credits {
+    font-weight: 300;
+    width: 50%;
+    background-color: white;
+    position: relative;
+    padding: 20px;
+}
+
+.credits-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background-image: url('bg.jpg');
+    background-size: 60%;
+}
+
+.credits-container.active {
+    display: flex;
+}
+
+.begin {
+    background-color: #20376B;
+    border-radius: 25px; 
+    height: 50px;
+    width: 200px;
+    color: white;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bungee', sans-serif;
+    margin-top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.credits-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'BioRhyme', sans-serif;
+    font-weight: 800;
+    background-color: #fefefe;
+    background-image: url('bg.jpg');
+    background-size: 60%;
+}
+
+#video {
+    transform: scaleX(-1);
+    display: none;
+}
+
+.audio {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.quote-container {
+    position: absolute;
+    height: 100px;
+    overflow: auto;
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    font-weight: 300;
+    font-style: italic;
+    padding: 15px 30px;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.canvas-container {
+    width: 90vh;
+    height: 90vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+}
+
+.camera-canvas {
+    position: absolute;
+    transform: scale(0.5, 0.5);
+    transform-origin: 0 0;
+}
+
+.title-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+.instructions {
+    font-size: 24px;
+    display: none;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container.active .instructions {
+    display: flex;
+}
+
+.title-container.hidden {
+    display: none;
+}
+
+.title-content {
+    width: 80%;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Bungee Inline', sans-serif;
+    font-size: 80px;
+    color: #20376B;
+    margin: 0;
+}
+
+#main {
+    left: 0;
+    top: 0; /*camera feed scaled to 0.5*/
+    position: absolute;
+}
+
+.credits-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: #20376B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.illustration-canvas {
+    border: 1px solid #eeeeee;
+    width: 100%;
+    height: 100%;
+    background-image: url('whitehouse.gif'); 
+    background-size: cover;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+}
+
+.footer-text {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+
+#loading {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .footer-text,
+    .dg {
+        display: none;
+    }
+}
+
+/*
+ *  The following loading spinner CSS is from SpinKit project
+ *  https://github.com/tobiasahlin/SpinKit
+ */
+.sk-spinner-pulse {
+    width: 20px;
+    height: 20px;
+    margin: auto 10px;
+    float: left;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+    animation: sk-pulseScaleOut 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-pulseScaleOut {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+.spinner-text {
+    float: left;
+}
