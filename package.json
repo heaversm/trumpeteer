@@ -20,7 +20,7 @@
   },
   "scripts": {
     "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr --open --no-source-maps",
-    "build": "cross-env NODE_ENV=production parcel build index.html --public-url ./",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url ./ --no-source-maps",
     "build-camera": "cross-env NODE_ENV=production parcel build camera.html --public-url ./",
     "lint": "eslint .",
     "link-local": "yalc link"
